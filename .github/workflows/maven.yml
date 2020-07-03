@@ -15,7 +15,6 @@ jobs:
           - java11
         graalvm-version:
           - 20.0.0
-          - 20.1.0
 
     steps:
       - uses: actions/checkout@v1
@@ -31,7 +30,7 @@ jobs:
       - name: Start Database
         run: ./docker/start_db_single.sh docker.io/arangodb/arangodb:3.6.4
       - name: compile native
-        run: mvn package -Pnative-image
+        run: mvn package -Pnative-image -DskipTests
       - name: start native server
         run: ./target/arango-helidon-native-example -Dserver.port=8081 &
       - name: test
