@@ -1,0 +1,6 @@
+[
+  {
+    "name": "com.arangodb.config.HostDescription[]",
+    "unsafeAllocated": true
+  }
+]
