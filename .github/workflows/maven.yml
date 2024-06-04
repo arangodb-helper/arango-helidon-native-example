@@ -26,6 +26,8 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Info
         run: mvn -version
+      - name: Deps tree
+        run: mvn dependency:tree -Dshaded=${{matrix.shaded}}
       - name: Start Database
         run: ./docker/start_db.sh
         env:
