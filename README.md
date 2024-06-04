@@ -39,3 +39,11 @@ You can then execute your native executable with:
 ```
 ./target/arango-helidon-native-example
 ```
+
+## Building a Native Image with the shaded driver
+
+You can build a native binary using Maven as follows:
+
+```
+mvn -Pnative-image package -DskipTests -Dshaded
+```

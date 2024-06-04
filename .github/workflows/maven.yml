@@ -8,6 +8,13 @@ jobs:
     timeout-minutes: 10
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        shaded:
+          - 'true'
+          - 'false'
+
     steps:
       - uses: actions/checkout@v2
       - uses: graalvm/setup-graalvm@v1
@@ -26,7 +33,7 @@ jobs:
       - name: test
         run: mvn test
       - name: package-native
-        run: mvn -Pnative-image package
+        run: mvn -Pnative-image -Dshaded=${{matrix.shaded}} package
       - name: start-native
         run: ./target/arango-helidon-native-example &
       - name: wait
