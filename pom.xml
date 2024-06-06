@@ -87,7 +87,8 @@
             <id>plain</id>
             <activation>
                 <property>
-                    <name>!shaded</name>
+                    <name>shaded</name>
+                    <value>!true</value>
                 </property>
             </activation>
             <dependencies>
@@ -130,6 +131,7 @@
             <activation>
                 <property>
                     <name>shaded</name>
+                    <value>true</value>
                 </property>
             </activation>
             <dependencies>
