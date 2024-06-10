@@ -1,10 +1,10 @@
-package io.helidon.examples.quickstart.mp;
+package com.example.myproject;
 
 import com.arangodb.ArangoDB;
 import com.arangodb.entity.ArangoDBVersion;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 
 /**
  * @author Michele Rastelli
